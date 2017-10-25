@@ -1,0 +1,75 @@
+h1
+{
+	margin:2% auto;
+	position:relative;
+	text-align:center;
+	border:1px solid skyblue;
+	background-color:skyblue;
+	color:white;
+	width:320px;
+	border-radius:4px;
+	padding:1% 1%;
+	box-shadow:4px 4px grey;
+}
+#first
+{
+ background-color:skyblue;
+  border:1px solid skyblue;
+  box-shadow:4px 4px grey;
+  border-radius:4px;
+  padding:1% 1%;
+
+}
+#ar
+{
+	size:80px;
+	width:250px;
+	width:210px;
+	background-color:white;
+	box-shadow:4px 4px grey;
+	border-radius:3px;
+	margin:2%;
+	padding:2% 1%;
+	border:1px solid white;
+}
+#cbt
+{
+	background-color:pink;
+	color:white;
+	margin:3%;
+	padding:2% 2%;
+	border:1px solid pink;
+	width:60px;
+	box-shadow:4px 4px grey;
+	border-radius:3px;
+	font-size:16px;
+	font-weight:bold;
+}
+#bt
+{
+	background-color:white;
+	color:grey;
+	margin:2%;
+	padding:2% 2%;
+	border:1px solid white;
+	width:60px;
+	border-radius:3px;
+	box-shadow:4px 4px grey;
+	font-weight:bold;
+	font-size:14px;
+
+}
+#bt:hover
+{
+	background-color:skyblue;
+	color:white;
+
+}
+table
+{
+	padding:3% 3%;
+}
+td
+{
+	padding:2% 2%;
+}
