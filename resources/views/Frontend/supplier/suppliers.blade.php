@@ -9,12 +9,12 @@
                 <strong>Well done!</strong>{{Session::get('message')}}
             </div>
         @endif
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6">
                 <img style="margin-top: 5%;margin-left:25%;width: 300px; height:350px"
                      src="{{url('supp.png')}}">
 
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="form-panel">
                     <div class="panel-body">
                        @if($sup != null)

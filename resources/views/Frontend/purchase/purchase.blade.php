@@ -10,11 +10,11 @@
                 <strong>Well done!</strong>{{Session::get('message')}}
             </div>
         @endif
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6">
             <img style="margin-top: 10%; width: 550px;"
                  src="{{url('pur.jpg')}}">
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6">
             <div class="form-panel">
                 <div class="panel-body">
                     @if($edit_purchase != null)

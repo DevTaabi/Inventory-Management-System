@@ -35,7 +35,7 @@ class StockController extends Controller
         $product = new Product();
         $product->name = strtolower($request['name']);
         $product->cost = $request['pur_price'];
-        $product->supplier_name = $request['supplier_name'];
+        $product->sup_id = $request['supplier_name'];
         $product->size = $request['size'];
         $product->profit = $request['profit'];
         $product->category = $request['category'];

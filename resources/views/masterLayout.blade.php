@@ -104,15 +104,8 @@
 @include('Includes.header')
 <!--Navigation Top Bar End-->
 <section id="main-container">
-
-
-    <!--Left navigation section start-->
-@include('Includes.sidebar')
-<!--Left navigation section end-->
-
-
     <!--Page main section start-->
-    <section id="min-wrapper">
+    <section >
         <div id="main-content">
             <div class="container-fluid">
                 <div class="row">

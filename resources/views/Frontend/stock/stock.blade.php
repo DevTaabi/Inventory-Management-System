@@ -9,7 +9,7 @@
                 <strong>Well done!</strong>{{Session::get('message')}}
             </div>
         @endif
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6">
             <div class="form-panel">
                 <div class="panel-body">
                     {{--{{ App::VERSION() }}--}}
@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6">
             <div class="form-panel">
                 <div class="panel-body">
                     @include("Frontend.stock.insert_size")

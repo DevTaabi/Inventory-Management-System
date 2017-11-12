@@ -76,7 +76,8 @@ Route::get('/deletepur/{id}','purchaseController@deletepur' )->name("deletepur")
 
     Route::get('/sale','SaleController@show')->name("sale");
     Route::get('/add_sale','SaleController@show')->name("add_sale");
+    Route::get('/search_item','SaleController@search_item')->name("search_item");
 
-
+    Route::get('demos/livesearch','SaleController@liveSearch');
 });
 Route::get('/logout','userController@logout' )->name("logout");

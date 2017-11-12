@@ -2,11 +2,8 @@
 @section("main-content")
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-light-green">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Create Sale</h3>
-                </div>
-                <div class="panel-body">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+                    @include('Frontend.livesearch')
                     <form action="{{route('add_sale')}}" method="post" class="form-inline ls_form" role="form">
                         <div class="form-group">
                             <input type="text" name="product_name" class="form-control  {{ $errors->has('product_name') ? ' has-error' : '' }}"
@@ -98,18 +95,6 @@
     </div>
 
 
-    {{--<div class="row">--}}
-        {{--<div class="col-md-12">--}}
-            {{--<div class="panel panel-red">--}}
-                {{--<div class="panel-heading">--}}
-                    {{--<h3 class="panel-title">Products</h3>--}}
-                {{--</div>--}}
-                {{--<div class="panel-body">--}}
-                    {{--@include('Frontend.sale.show_products')--}}
-
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+   
 
 @endsection
