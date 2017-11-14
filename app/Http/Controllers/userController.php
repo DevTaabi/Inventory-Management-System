@@ -19,8 +19,7 @@ class userController extends Controller
         $t_supplier = Supplier::all()->count();
         $t_customer = customer::all()->count();
 
-        return view('Frontend.home',compact('t_purchase','t_sale','t_supplier','t_customer'));
-
+        return view('Frontend.home', compact('t_purchase','t_sale','t_supplier','t_customer'));
     }
 
     public function add(Request $request)
@@ -45,14 +44,14 @@ class userController extends Controller
 
     public function home(Request $request)
     {
-        if($request['name'] != null && $request['password'] != null)
-        {
-        if(Auth::attempt(['name' => $request['name'],'password' => $request['password']]))
-        {return redirect()->route('show');}
-        else
-
-        {return redirect()->route('error');}
-        }else{
+        if ($request['name'] != null && $request['password'] != null) {
+            if(Auth::attempt(['name' => $request['name'],'password' => $request['password']])) {
+                return redirect()->route('show');
+            }
+            else {
+                return redirect()->route('error');
+            }
+        } else {
             return view('emptyerror');
         }
     }
