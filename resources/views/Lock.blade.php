@@ -21,9 +21,15 @@
         h2 {
             color: #AAA; 
         }
-        .form-wrapper{
+        .form-wrapper {
             background-color: rgba(255, 255, 255, .3);
             padding: 40px 20px 20px;
+        }
+        .login-errors {
+            background-color: #FFF !important;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
         }
     </Style>
 </head>
@@ -39,10 +45,20 @@
                 <h2 class="text-center">LOGIN</h2>
 
                 <div class="form-wrapper animated shake">
+                    @if ($errors->any())
+                        <div class="login-errors">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li class="text-danger">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <form action="{{ route('home') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Name" value="Hafiz Abdul Rauf" class="form-control">
+                            <input type="text" id="name" name="name" placeholder="Name" value="{{ old('name') }}" class="form-control">
                         </div>
                         <div class="form-group">
                             <input type="password" id="password" name="password" placeholder="Password" class="form-control" autofocus>

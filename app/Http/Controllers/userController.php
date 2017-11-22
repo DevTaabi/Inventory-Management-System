@@ -8,7 +8,9 @@ use App\Sale;
 use App\Supplier;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
+use Auth;
+use Validator;
 
 class userController extends Controller
 {
@@ -24,17 +26,21 @@ class userController extends Controller
 
     public function add(Request $request)
     {
-        $this->validate($request,[
+        $rules = [
             'name' => 'required',
             'password' => 'required|min:6'
-        ]);
+        ];
+
+        $this->validate($request, $rules);
+        
         $user = new User();
         $user->name = $request['name'];
         $user->password = bcrypt($request['password']);
 
         $user->save();
         $message = 'user added successfully.';
-        return redirect()->back()->with('message',$message);
+
+        return back()->with('message',$message);
     }
 
     public function pagenotfound()
@@ -44,16 +50,23 @@ class userController extends Controller
 
     public function home(Request $request)
     {
-        if ($request['name'] != null && $request['password'] != null) {
-            if (Auth::attempt(['name' => $request['name'],'password' => $request['password']])) {
-                return redirect()->route('show');
-            }
-            else {
-                return redirect()->route('error');
-            }
-        } else {
-            return view('emptyerror');
+        $rules = [
+            'name' => 'required',
+            'password' => 'required|min:6'
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
         }
+
+        if (Auth::attempt(['name' => $request['name'], 'password' => $request['password']])) {
+            return redirect()->route('show');
+        } else {
+            return back()->withInput();
+        }
+    
     }
 
     public function logout()
