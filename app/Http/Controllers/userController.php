@@ -45,7 +45,7 @@ class userController extends Controller
     public function home(Request $request)
     {
         if ($request['name'] != null && $request['password'] != null) {
-            if(Auth::attempt(['name' => $request['name'],'password' => $request['password']])) {
+            if (Auth::attempt(['name' => $request['name'],'password' => $request['password']])) {
                 return redirect()->route('show');
             }
             else {
